@@ -5,7 +5,7 @@
   </header>
 
 
-  <div class="order-summary jumbotron">
+  <div class="order-summary jumbotron"> 
   <% @order.line_items.each do |item| %>
     <%= render 'order', item: item %>
   <% end %>
