@@ -3,8 +3,13 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+  
   <div class="panel panel-default items">
+  <% if @cart.length === 0 %>
+    <h4> Your cart is empty! </h4>
+    </br>
+    <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
+  <% else %>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -48,6 +53,7 @@
         </script>
       <% end %>
     </div>
+  <% end %>
   </div>
 
 </section>
