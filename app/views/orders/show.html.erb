@@ -29,6 +29,9 @@
         <%= '%.2f' % (@order_total / 100) %>
       </th>
     </tr>
+    <tr>
+      <th colspan="4">Thanks for your business! Your receipt is sent to <%= @order.email%>.</th>
+    </tr>
   </tfoot>
 </table>
 </div>
