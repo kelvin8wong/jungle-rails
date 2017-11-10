@@ -4,12 +4,34 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
-
-  <div class="order-summary jumbotron"> 
-  <% @order.line_items.each do |item| %>
-    <%= render 'order', item: item %>
-  <% end %>
-  </div>
+  <div class="panel panel-default items">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="2">Product</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order_total = 0 %>
+      <% @order.line_items.each do |item| %>
+        <%= render 'order', item: item %>
+      <% end %>
+    </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="4">
+        TOTAL:
+      </th>
+      <th>
+        <%= '%.2f' % (@order_total / 100) %>
+      </th>
+    </tr>
+  </tfoot>
+</table>
+</div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
