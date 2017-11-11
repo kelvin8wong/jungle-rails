@@ -132,6 +132,12 @@ bookshelf = cat3.products.create!({
   price: 2_483.75
 })
 
+# Users
+puts "Creating users ..."
+
+user1 = User.create!({first_name:'Marcus', last_name:'Dias', password:'marcus', email:'marcus@marcus.marcus'})
+user2 = User.create!({first_name:'Kelvin', last_name:'Wong', password:'kelvin', email:'kelvin@kelvin.kelvin'})
+
 ## Reviews
 puts "Creating reviews ..."
 
