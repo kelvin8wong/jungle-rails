@@ -22,6 +22,15 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Reviews</dt>  
+          <div>
+            <% @product.reviews.sort_by {|k,v| v}.reverse.each do |review|%>
+            <div>
+              <dd><%=review.description %> Rating: <%= review.rating %></dd>
+              <dd>Published on <%= review.updated_at %> by <%= review.user.first_name%></dd>
+             </div>
+            <% end %>
+            </div>
         </dl>
       </div>
     </div>
