@@ -133,14 +133,12 @@ bookshelf = cat3.products.create!({
 })
 
 ## Reviews
-puts "Creating users and reviews ..."
+puts "Creating reviews ..."
 
-user1 = User.create!({first_name:'Marcus', last_name:'Dias', password:'marcus', email:'marcus@marcus.marcus'})
-user2 = User.create!({first_name:'Kelvin', last_name:'Wong', password:'kelvin', email:'kelvin@kelvin.kelvin'})
-bookshelf.reviews.create!({description: 'Awesome Bookshelf!', rating: 5, user: user1})
-bookshelf.reviews.create!({description: 'Good product!', rating: 4, user: user2})
-classy_shirt.reviews.create!({description: 'Ewwww', rating: 1, user: user1})
-classy_shirt.reviews.create!({description: 'Nice!', rating: 4, user: user2})
-electric_chair.reviews.create!({rating: 5, user: user2})
+bookshelf.reviews.create!({description: 'Awesome Bookshelf!', rating: 5, user_id: 1})
+bookshelf.reviews.create!({description: 'Good product!', rating: 4, user_id: 2})
+classy_shirt.reviews.create!({description: 'Ewwww', rating: 1, user_id: 1})
+classy_shirt.reviews.create!({description: 'Nice!', rating: 4, user_id: 2})
+electric_chair.reviews.create!({rating: 5, user_id:2 })
 
 puts "DONE!"
