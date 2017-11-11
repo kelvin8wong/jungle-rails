@@ -5,7 +5,7 @@
   </header>
   
   <div class="panel panel-default items">
-  <% if @cart.length === 0 %>
+  <% if cart.empty? %>
     <h4> Your cart is empty! </h4>
     </br>
     <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
@@ -53,7 +53,7 @@
         </script>
       <% end %>
     </div>
-  <% end %>
+    <% end %>
   </div>
 
 </section>
