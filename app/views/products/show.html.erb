@@ -21,12 +21,13 @@
           <div>
             <% @product.reviews.sort_by {|k,v| v}.reverse.each do |review|%>
               <div>
-                <dd><%=review.description %> Rating: <%= review.rating %></dd>
+                <dd><code><%=review.description %> (Rating: <%= review.rating %>)</code></dd>
                 <dd>
-                  Published on <%= review.updated_at %> by <%= review.user.first_name%>
-                  <% if current_user == review.user%>
-                    <%= link_to fa_icon('trash'), [review.product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
-                  <% end %>
+                  <small>Published <%= time_ago_in_words(review.updated_at)%> ago by <%= review.user.first_name%>
+                    <% if current_user == review.user%>
+                      <%= link_to 'delete', [review.product, review], method: :delete, data: { confirm: "Are you sure?" } %>
+                    <% end %>
+                  </small>
                 </dd>
               </div>
             <% end %>

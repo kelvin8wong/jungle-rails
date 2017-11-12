@@ -86,4 +86,8 @@ main section.products-show {
   }
 }
 
-
+section.cart-show {
+  .empty-cart > h4 {
+    padding: 10px;
+  }
+}

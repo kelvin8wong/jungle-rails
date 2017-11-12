@@ -6,9 +6,10 @@
   
   <div class="panel panel-default items">
   <% if cart.empty? %>
-    <h4> Your cart is empty! </h4>
-    </br>
-    <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
+    <div class="empty-cart">
+      <h4> Your cart is currently empty! </h4>
+      <h4><%= link_to "Return Shopping", root_path, class: 'btn btn-lg btn-primary' %></h4>
+    </div>
   <% else %>
     <table class="table table-bordered">
       <thead>

@@ -8,9 +8,9 @@
     <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
   </div>
 
-  <ul class="category-list">
+  <ul class="list-group">
     <% @categories.each do |category| %>
-      <li><%= link_to category.name, category %></li>
+      <li class="list-group-item"><%= link_to category.name, category %></li>
     <% end %>
   </ul>
 

@@ -4,14 +4,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h3>Dear customer,</h3>
+    <h4>Dear customer,</h4>
     <h4>Thanks for shopping on Jungle! Here is your order summary:</h4>
-    <p><h4>Order ID: </h4><%=@order.id%></p>
-    <p><h4>Purchased on: </h4><%=@order.created_at%></p>
+    <p><strong>Order ID: </strong><%=@order.id%></p>
+    <p><strong>Purchased on: </strong><%=@order.created_at%></p>
     <table>
       <thead>
         <tr>
-          <th colspan="2">Product</th>
+          <th>Product</th>
+          <th></th>
           <th>Unit Price</th>
           <th>Quantity</th>
           <th>Price</th>
@@ -25,14 +26,13 @@
             </td>
             <td>
               <h4><%= item.product.name %></h4>
-              <br>
               <p><%= item.product.description %></p>
             </td>
             <td>
               <%=  '%.2f' % (item.item_price_cents / 100) %>
             </td>
             <td>
-              <%= item.quantity %>
+              <center><%= item.quantity %></center
             </td>
             <td>
               <%= '%.2f' % (item.total_price_cents / 100) %>
@@ -42,9 +42,10 @@
       </tbody>
       <tfoot>
         <tr>
-          <th colspan="2">
-            TOTAL:
-          </th>
+          <th>TOTAL:</th>
+          <th></th>
+          <th></th>
+          <th></th>
           <th>
             <%= '%.2f' % (@order.total_cents / 100)%>
           </th>
@@ -52,5 +53,7 @@
       </tfoot>
     </table>
     <h4>Have a nice day!</h4>
+    <h3><i>Jungle</i></h3>
+    <h5>www.jungle.com</h5>
   </body>
 </html>
