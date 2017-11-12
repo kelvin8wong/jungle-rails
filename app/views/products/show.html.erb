@@ -19,20 +19,25 @@
           <dd><%= @product.price %></dd>
           <dt>Reviews</dt>  
           <div>
-            <% @product.reviews.sort_by {|k,v| v}.reverse.each do |review|%>
-              <div>
-                <dd><code><%=review.description %> (Rating: <%= review.rating %>)</code></dd>
-                <dd>
-                  <small>Published <%= time_ago_in_words(review.updated_at)%> ago by <%= review.user.first_name%>
-                    <% if current_user == review.user%>
-                      <%= link_to 'delete', [review.product, review], method: :delete, data: { confirm: "Are you sure?" } %>
-                    <% end %>
-                  </small>
-                </dd>
-              </div>
+            <% if @product.reviews.empty? %>
+              <dd></dd>
+            <% else %>
+              <% @product.reviews.sort_by {|k,v| v}.reverse.each do |review|%>
+                <div>
+                  <dd><code><%=review.description %> (Rating: <%= review.rating %>)</code></dd>
+                  <dd>
+                    <small>Published <%= time_ago_in_words(review.updated_at)%> ago by <%= review.user.first_name%>
+                      <% if current_user == review.user%>
+                        <%= link_to 'delete', [review.product, review], method: :delete, data: { confirm: "Are you sure?" } %>
+                      <% end %>
+                    </small>
+                  </dd>
+                </div>
+              <% end %>
             <% end %>
           </div>
           <dt>Post Review</dt>
+            <dd></dt>
             <dd> 
               <%= form_for([@product, @review]) do |form| %>
                 <div class="form-group">
