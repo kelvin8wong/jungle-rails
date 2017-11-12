@@ -1,8 +1,17 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 with additional new features implemented.
 
+## Final Product
+!["Screenshot of sold-out-badge"](https://github.com/kelvin8wong/jungle-rails/blob/master/docs/sold-out-badge.png?raw=true)
 
+!["Screenshot of product-rating"](https://github.com/kelvin8wong/jungle-rails/blob/master/docs/product-rating.png?raw=true)
+
+!["Screenshot of empty-cart"](https://github.com/kelvin8wong/jungle-rails/blob/master/docs/empty-cart.png?raw=true)
+
+!["Screenshot of order-details"](https://github.com/kelvin8wong/jungle-rails/blob/master/docs/order-details.png?raw=true)
+
+!["Screenshot of email-receipt"](https://github.com/kelvin8wong/jungle-rails/blob/master/docs/email-receipt.png?raw=true)
 ## Setup
 
 1. Fork & Clone
@@ -26,3 +35,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## Authors
+Kelvin Wong 
+
+## Acknowledgments
+Lighthouse Lab Mentors
